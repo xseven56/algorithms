@@ -1,40 +1,60 @@
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
+// def get_float_input():
+//     while True:
+//         try:
+//             float_input = float(input("Введите дробное число: "))
+//             return float_input
+//         except ValueError:
+//             print("Некорректный ввод. Пожалуйста, введите дробное число.")
 
-public class Main {
+// 2
+// try {
+//     int d = 0;
+//     double catchedRes1 = intArray[8] / d;
+//     System.out.println("catchedRes1 = " + catchedRes1);
+//  } catch (ArithmeticException e) {
+//     System.out.println("Catching exception: " + e);
+//  }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите данные в формате: Фамилия Имя Отчество номер_телефона");
-        String input = scanner.nextLine();
 
-        String[] data = input.split(" ");
-        if (data.length != 4) {
-            System.out.println("Ошибка: неверное количество данных");
-            return;
-        }
+//  3
 
-        String surname = data[0];
-        String name = data[1];
-        String patronymic = data[2];
-        long phoneNumber;
-        try {
-            phoneNumber = Long.parseLong(data[3]);
-        } catch (NumberFormatException e) {
-            System.out.println("Ошибка: номер телефона должен быть целым беззнаковым числом");
-            return;
-        }
+//  public static void main(String[] args) throws Exception {
+//     try {
+//         int a = 90;
+//         int b = 3;
+//         System.out.println(a / b);
+//         printSum(23, 234);
+//         int[] intArray = { 1, 2 };
+//         intArray[3] = 9;
+//     } catch (ArithmeticException ex) {
+//         System.out.println("Ошибка деления на ноль!");
+//     } catch (NullPointerException ex) {
+//         System.out.println("Указатель не может указывать на null!");
+//     } catch (ArrayIndexOutOfBoundsException ex) {
+//         System.out.println("Выход за границы массива!");
+//     } catch (Exception ex) {
+//         System.out.println("Что-то пошло не так...");
+//     }
+//  }
+//  public static void printSum(Integer a, Integer b) throws FileNotFoundException {
+//     System.out.println(a + b);
+//  }
 
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(surname + ".txt", true));
-            writer.write(surname + name + patronymic + phoneNumber + "\n");
-            writer.close();
-            System.out.println("Данные успешно записаны в файл " + surname + ".txt");
-        } catch (IOException e) {
-            System.err.println("Ошибка записи в файл:");
-            e.printStackTrace();
-        }
-    }
-}
+// 4
+// import java.util.Scanner;
+
+// public class EmptyStringExceptionExample {
+//     public static void main(String[] args) {
+//         Scanner scanner = new Scanner(System.in);
+//         System.out.print("Введите строку: ");
+//         String input = scanner.nextLine();
+//         try {
+//             if (input.isEmpty()) {
+//                 throw new Exception("Пустые строки вводить нельзя!");
+//             }
+//             System.out.println("Вы ввели: " + input);
+//         } catch (Exception ex) {
+//             System.out.println(ex.getMessage());
+//         }
+//     }
+// }
